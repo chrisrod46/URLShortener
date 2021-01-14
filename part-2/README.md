@@ -1,9 +1,4 @@
-# CPSC 223p
 ##  Flask URL Shortener
-
-Remember the book [Flask Web Development](https://csuf-primo.hosted.exlibrisgroup.com/permalink/f/43rjjt/TN_cdi_askewsholts_vlebooks_9781491991718) book by [Miguel Grinberg](https://blog.miguelgrinberg.com/) is available through the [CSUF library](http://www.library.fullerton.edu/). Miguel Grinberg has also written [the Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) for those unwilling to use books.
-
-Write a web application using the Flask framework which shortens URLs similar to how online services like bit.ly and tinyurl.com work. Your application will have a web form which someone can submit a url such as http://www.fullerton.edu/ and a new ShortUrl object shall be created which stores the original URL, the short url, and the date the object was created. The ShortUrl object is mapped to a relational database table such that the application can quickly recall any previously shortened URL.
 
 The ShortUrl object has the following data members:
   
@@ -33,13 +28,7 @@ To map the integer given to urlshortcode() to a string, we shall convert the num
 * base 10 1000 is base 62 qi
 * base 10 1654 is base 62 AQ
 
-Note that the most significant digit is on the left in all the examples. Please follow the pattern given.
-
-(Please do not waste your time trying to 'find' this code online. Just write it yourself.)
-
-The inverse function, orignalurl(), shall take a string which is a base 62 number and map that number back to base 10. The base 10 number is the ShortUrl object's ID in the database.
-
-The repository has a different layout from part-1. The application is in the directory named urlshortener. The application is defined as a Python module with an __init__.py file. The database creation is handled in cli.py. The database objects (the model) is defined in models.py, and the applications configuration is given in config.py. The application's URL routing should be defined in __init__.py or in a separate file named controller.py. The application's templates are in urlshortener/templates.
+The application is in the directory named urlshortener. The application is defined as a Python module with an __init__.py file. The database creation is handled in cli.py. The database objects (the model) is defined in models.py, and the applications configuration is given in config.py. The application's URL routing should be defined in __init__.py or in a separate file named controller.py. The application's templates are in urlshortener/templates.
 
 The project uses python-dotenv. There is a file named .env which defines the environment variables for this project.
 
