@@ -16,8 +16,6 @@ The application will have the following routes.
 
 Given a URL, for example https://www.fullerton.edu/, the URL will be mapped to a string which represents the URL. The string must be unique and the function used to map the URL to the string must be [bijective](https://en.wikipedia.org/wiki/Bijection). A bijection is a function which is invertible thus given the short string code, we can map that code back to the original URL.
 
-(Although you should all be able to do the math, this isn't a serious computer science course so let I'll explain the algorithm and you implement it. And let's keep it simple - I'll leave it to the reader to worry about how this algorithm can be compromised and our implementation is susceptible to Javascript injection attacks.)
-
 Let's call our shortening function urlshortcode() and our URL lookup function shall be called orignalurl().
 
 Every ShortUrl object has a unique integer ID data member. Let's use the ID as the parameter to urlshortcode(). For example, if I want to shorten the ShortUrl with ID 1 then urlshortcode(1) is called. This returns a string which represents 1.
