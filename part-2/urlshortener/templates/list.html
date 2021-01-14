@@ -1,0 +1,19 @@
+<html>
+<body>
+    <h1>Here is a list of all shorten URLs</h1>
+</body>
+
+{%for final in final%}
+<table>
+<tr>
+    <td>{{final.id}}</td>
+    <td><a href="{{final.ori}}">{{final.ori}}</a></td>
+    <td><a href="{{final.ori}}">{{final.short}}</a></td>
+    <td>{{final.date}}</td>
+    <td><a href ="/delete/{{final.id}}">delete</a></td>
+</tr>
+<tr>
+</table>
+{% endfor %}
+
+</html>

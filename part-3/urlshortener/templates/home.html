@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Welcome to URL Shortener!</title>
+</head>
+
+{% block content %}
+<div class = "container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{message}}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+<body>
+
+    {% if current_user.is_authenticated %}
+      You are logged in as {{ current_user.email }}!
+      <a href="{{ url_for("logout") }}">Log out</a>
+      <h1>Welcome to the home page!</h1>
+      <form action="" method="POST">
+          <p>Please enter the URL you want shortened: <input type="text" name = "name" ></p>
+          <p><input type ="submit" value="Go"></p>
+      </form>
+    {% else %}
+      You are not logged in.
+      <a href="{{ url_for("google.login") }}">Log in</a>
+    {% endif %}
+</body>
+
+
+</html>

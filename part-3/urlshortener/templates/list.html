@@ -1,0 +1,24 @@
+<html>
+<body>
+    <h1>Here is a list of all shorten URLs</h1>
+</body>
+
+{% if current_user.is_authenticated %}
+{%for final in final%}
+<table>
+<tr>
+    <td>{{final.id}}</td>
+    <td><a href="{{final.ori}}">{{final.ori}}</a></td>
+    <td><a href="{{final.ori}}">{{final.short}}</a></td>
+    <td>{{final.date}}</td>
+    <td><a href ="/delete/{{final.id}}">delete</a></td>
+</tr>
+<tr>
+</table>
+{% endfor %}
+{% else %}
+  You are not logged in.
+  <a href="{{ url_for("google.login") }}">Log in</a>
+{% endif %}
+
+</html>

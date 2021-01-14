@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Welcome to URL Shortener!</title>
+</head>
+
+{% block content %}
+<div class = "container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{message}}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+<body>
+    <h1>Welcome to the home page!</h1>
+    <form action="" method="POST">
+        <p>Please enter the URL you want shortened: <input type="text" name = "name" ></p>
+        <p><input type ="submit" value="Go"></p>
+    </form>
+</body>
+
+
+</html>
